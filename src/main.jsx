@@ -11,6 +11,8 @@ import About from './Componentes/About/About.jsx';
 import Contact from './Componentes/Contact/Contact.jsx';
 import Servises from './Componentes/Servises/Servises.jsx';
 import UserDetails from './Componentes/UserDetails/UserDetails.jsx';
+import Albums from './Componentes/Albums/Albums.jsx';
+import AlbumDetails from './Componentes/AlbumDetails/AlbumDetails.jsx';
 
 const router =  createBrowserRouter([
   {
@@ -35,6 +37,17 @@ const router =  createBrowserRouter([
       path : '/services/:userID',
       loader : ({params})=> fetch(`https://jsonplaceholder.typicode.com/users/${params.userID}`),
       element : <UserDetails></UserDetails>
+    },
+    {
+      path : '/albums',
+      loader : ()=> fetch('https://jsonplaceholder.typicode.com/albums'),
+      element : <Albums></Albums>
+    },
+    {
+      path : '/album/:albumId',
+      loader : ({params})=> fetch(`https://jsonplaceholder.typicode.com/albums/${params.albumId}`),
+      element : <AlbumDetails></AlbumDetails>
+      
     }
   ]
   },
