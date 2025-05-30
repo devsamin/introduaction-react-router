@@ -13,11 +13,13 @@ import Servises from './Componentes/Servises/Servises.jsx';
 import UserDetails from './Componentes/UserDetails/UserDetails.jsx';
 import Albums from './Componentes/Albums/Albums.jsx';
 import AlbumDetails from './Componentes/AlbumDetails/AlbumDetails.jsx';
+import ErrorPage from './Componentes/ErrorPage/ErrorPage.jsx';
 
 const router =  createBrowserRouter([
   {
     path : '/',
     element : <Home></Home>,
+    errorElement : <ErrorPage></ErrorPage>,
 
     children : [
     {
